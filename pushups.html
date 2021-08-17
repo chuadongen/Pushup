@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>p u s h   u p s</title>
+        <style>
+            div {
+                text-align: center;
+            }
+            input {
+                animation: rotation 5s infinite linear;
+            }
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(359deg);
+                }
+                }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <h1>Did you do your pushups?</h1>
+            <input type="button" value="Did you do your fucking pushups?" onclick="play()">
+            <audio id="audio" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
+        </div>
+    </body>
+    
+    <script>
+        function play() {
+          var audio = document.getElementById("audio");
+          audio.play();
+        }
+      </script>
+</html>
