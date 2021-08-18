@@ -89,19 +89,19 @@
             $('#francis').click(function () {
                 window.speechSynthesis.speak(speech);
                 var richard = localStorage.getItem("richard");
-                if (richard == null) {
-                    localStorage.setItem("richard", [new Date()]);
-                }
-                else {
-                    if (richard(-1).setHours(0, 0, 0, 0) == rightnow) {
-                        console.log("can liao");
-                    }
-                    else {
-                        //var audio = document.getElementById("audio");
-                        //audio.play();
-                        richard.push(new Date());
-                    }
-                }
+                // if (richard == null) {
+                //     localStorage.setItem("richard", [new Date()]);
+                // }
+                // else {
+                //     if (richard[-1].setHours(0, 0, 0, 0) == rightnow) {
+                //         console.log("can liao");
+                //     }
+                //     else {
+                //         //var audio = document.getElementById("audio");
+                //         //audio.play();
+                //         richard.push(new Date());
+                //     }
+                // }
             });
         });
     </script>
