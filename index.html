@@ -71,14 +71,6 @@
     </div>
 
     <script>
-        let speech = new SpeechSynthesisUtterance();
-
-        speech.lang = "en-US";
-        speech.text = "I love jay cheng";
-        speech.volume = 1;
-        speech.rate = 1;
-        speech.pitch = 1;
-
         //window.speechSynthesis.speak(speech);
 
         $(document).ready(function () {
@@ -87,6 +79,12 @@
             var lanjiao = 15;
             $('#ronaldmcdonald').html("Today's quota: " + lanjiao);
             $('#francis').click(function () {
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                speech.text = "I love jay cheng";
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
                 window.speechSynthesis.speak(speech);
                 var richard = localStorage.getItem("richard");
                 // if (richard == null) {
