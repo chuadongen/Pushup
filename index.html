@@ -4,15 +4,26 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <title>p u s h u p s</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            animation: color-change 1s infinite;
+        }
+
         footer {
-            text-align: center;
             position: fixed;
+            bottom: 0;
+            padding-bottom: 16px;
+            width: 100%;
+            text-align: center;
         }
 
         #text {
             text-align: center;
-            position: relative;
-            z-index: 0;
         }
 
         #doge {
@@ -71,25 +82,26 @@
     <div id="text">
         <h1>Did you do your pushups?</h1>
         <p id="ronaldmcdonald"></p>
-        <input id="francis" type="button" value="Did you do your fucking pushups?" ">
+        <input id="francis" type="button" value="Yes babe" ">
     </div>
+
     <div id="doge">
         <img src="https://i.gadgets360cdn.com/large/dogecoin_image_small_1618557722850.jpg">
     </div>
 
     <footer>
-        <p>&copy chuadongen & barneyhopping</p>
+        <p id="copyright">&copy chuadongen & barneyhopping</p>
         <a href="https://github.com/chuadongen/Pushup">da sauce</a>
     </footer> 
 
     <script>
-        //window.speechSynthesis.speak(speech);
-
         $(document).ready(function () {
+
             var rightnow = new Date();
             rightnow = rightnow.setHours(0, 0, 0, 0);
             var lanjiao = 15;
             $('#ronaldmcdonald').html("Today's quota: " + lanjiao);
+            
             $('#francis').click(function () {
                 let speech = new SpeechSynthesisUtterance();
                 speech.lang = "en-US";
@@ -99,6 +111,7 @@
                 speech.pitch = 1;
                 window.speechSynthesis.speak(speech);
                 var richard = localStorage.getItem("richard");
+
                 // if (richard == null) {
                 //     localStorage.setItem("richard", [new Date()]);
                 // }
