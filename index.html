@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>p u s h   u p s</title>
+        <title>p u s h u p s</title>
         <style>
-            div {
+            #text{
                 text-align: center;
+                animation: rotation 10s infinite linear;
+                position: relative;
+                z-index: 0;
             }
             input {
                 animation: rotation 5s infinite linear;
             }
+            #doge {
+                text-align: center;
+                animation: rotation 1s infinite linear;
+                position: relative;
+                z-index: -1;
+            }
+            h1 {
+                animation: color-change 1s infinite;
+                }
+            @keyframes color-change {
+                0% { color: red; }
+                20% { color: orange; }
+                40% { color: yellow; }
+                60% { color: green; }
+                80% { color: blue; }
+                100% { color: purple; }
+                }
             @keyframes rotation {
                 from {
                     transform: rotate(0deg);
@@ -21,13 +41,13 @@
     </head>
 
     <body>
-        <div>
+        <div id="text">
             <h1>Did you do your pushups?</h1>
             <input type="button" value="Did you do your fucking pushups?" onclick="play()">
             <audio id="audio" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
         </div>
-        <div>
-            <p>print("Ohaiyo sekai!")</p>
+        <div id="doge">
+            <img src="https://i.gadgets360cdn.com/large/dogecoin_image_small_1618557722850.jpg"> 
         </div>
     </body>
     
