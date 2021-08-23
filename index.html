@@ -5,123 +5,111 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <title>p u s h u p s</title>
     <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
+        body, #jay {
+            font-size: 2em;
         }
 
-        a {
-            text-decoration: none;
-            animation: color-change 1s infinite;
+        #ronaldmcdonald, input, footer, #copyright {
+            font-size: 1.4em;
         }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            padding-bottom: 16px;
-            width: 100%;
-            text-align: center;
-        }
+        /*desktop*/
+        @media only screen and (min-width: 768px) {
 
-        #text {
-            text-align: center;
-        }
-        
-        p{
-            font-size: large;
-        }
-        /* #doge {
-            text-align: center;
-            position: relative;
-            z-index: -1;
-        } */
-
-        img {
-            animation: rotation 1s infinite linear;
-        }
-
-        h1 {
-            animation: color-change 1s infinite;
-        }
-
-        @keyframes color-change {
-            0% {
-                color: red;
+            html, body {
+                height: 100%;
+                margin: 0;
             }
 
-            20% {
-                color: orange;
+            a {
+                text-decoration: none;
+                animation: color-change 1s infinite;
             }
 
-            40% {
-                color: yellow;
+            footer {
+                position: fixed;
+                bottom: 0;
+                padding-bottom: 16px;
+                width: 100%;
+                text-align: center;
             }
 
-            60% {
-                color: green;
+            #text {
+                text-align: center;
             }
 
-            80% {
-                color: blue;
+            p {
+                font-size: large;
             }
 
-            100% {
-                color: purple;
-            }
-        }
-
-        @keyframes rotation {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(359deg);
-            }
-        }
-
-        
-        @media (max-width: 768px) {
-            body{
-                font-size: 2em;
-            }
-            p{
-                font-size: 1.4em;
-            }
-            input{
-                font-size: 1.5em;
-            }
-        }
-        /* copeid code */
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            overflow: hidden;
-        }
-
-        section {
-            position: relative;
-        }
-
-        img {
-            position: absolute;
-            width: 200px;
-            fill: rgb(0, 81, 255);
-            z-index: 1;
-        }
-        
-        #text,footer{
-            z-index: 2;
-        }
-
-        @media (max-width: 768px) {
             img {
-                width: 150px;
+                animation: rotation 1s infinite linear;
+            }
+
+            h1 {
+                animation: color-change 1s infinite;
+            }
+
+            @keyframes color-change {
+                0% {
+                    color: red;
+                }
+
+                20% {
+                    color: orange;
+                }
+
+                40% {
+                    color: yellow;
+                }
+
+                60% {
+                    color: green;
+                }
+
+                80% {
+                    color: blue;
+                }
+
+                100% {
+                    color: purple;
+                }
+            }
+
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(359deg);
+                }
+            }
+
+            /* hippity hoppity your code is my property */
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                overflow: hidden;
+            }
+
+            section {
+                position: relative;
+            }
+
+            img {
+                position: absolute;
+                width: 200px;
+                fill: rgb(0, 81, 255);
+                z-index: 1;
+            }
+
+            #text footer {
+                z-index: 2;
             }
         }
     </style>
@@ -130,16 +118,16 @@
 <body>
     <section>
         <div id="text">
-            <h1>Did you do your pushups?</h1>
+            <h1 id="jay">Did you do your pushups?</h1>
             <p id="ronaldmcdonald"></p>
             <br>
             <input id="francis" type="button" value="Yes babe">
-    </div>
+        </div>
 
-    <div id=" doge">
-        <a href="https://knowyourmeme.com/memes/doge">
-            <img  class="logo" src="https://i.gadgets360cdn.com/large/dogecoin_image_small_1618557722850.jpg">
-        </a>
+        <div id=" doge">
+            <a href="https://knowyourmeme.com/memes/doge">
+                <img class="logo" src="https://i.gadgets360cdn.com/large/dogecoin_image_small_1618557722850.jpg">
+            </a>
         </div>
     </section>
 
@@ -184,7 +172,7 @@
                     var date = Date(richardArray[Object.keys(richardArray).length - 1])
                     date = new Date(date);
                     if (date.setHours(0, 0, 0, 0) == rightnow) {
-                        speech.text = "Mad lad";
+                        speech.text = "this is america. @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
                     }
                     else {
                         richardArray.push(new Date());
