@@ -95,36 +95,47 @@
     </footer> 
 
     <script>
+        function weeksBetween(d1, d2) {
+            return Math.floor(Math.round((d2-d1)/(1000*60*60*24))/7);
+        }
         $(document).ready(function () {
-
-            var rightnow = new Date();
+            var startDate = new Date(2021,7,16);
+            var rightnow = new Date(); 
             rightnow = rightnow.setHours(0, 0, 0, 0);
-            var lanjiao = 15;
+            var lanjiao = 15 +weeksBetween(startDate,rightnow);
+            
             $('#ronaldmcdonald').html("Today's quota: " + lanjiao);
             
             $('#francis').click(function () {
                 let speech = new SpeechSynthesisUtterance();
                 speech.lang = "en-US";
-                speech.text = "I love jay cheng";
                 speech.volume = 1;
                 speech.rate = 1;
                 speech.pitch = 1;
-                window.speechSynthesis.speak(speech);
+                speech.text = "But can you do more";        
                 var richard = localStorage.getItem("richard");
-
-                // if (richard == null) {
-                //     localStorage.setItem("richard", [new Date()]);
-                // }
-                // else {
-                //     if (richard[-1].setHours(0, 0, 0, 0) == rightnow) {
-                //         console.log("can liao");
-                //     }
-                //     else {
-                //         //var audio = document.getElementById("audio");
-                //         //audio.play();
-                //         richard.push(new Date());
-                //     }
-                // }
+                try{
+                    JSON.parse(richard)
+                }catch{
+                    localStorage.clear();
+                    richard=null;
+                }
+                if (richard == null) {
+                    localStorage.setItem("richard", JSON.stringify([new Date()]));                   
+                }
+                else {
+                    var richardArray = JSON.parse(richard);
+                    var date = Date(richardArray[Object.keys(richardArray).length-1])
+                    date = new Date(date);
+                    if (date.setHours(0, 0, 0, 0) == rightnow) {
+                        speech.text = "Mad lad";                                                        
+                    }
+                    else {
+                        richardArray.push(new Date());
+                        localStorage.setItem("richard", JSON.stringify(richardArray));      
+                    }
+                }
+                window.speechSynthesis.speak(speech);
             });
         });
     </script>
