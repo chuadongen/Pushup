@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <meta content="width=device-width, initial-scale=1" name="viewport" />
+
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="" script.js></script>
     <title>p u s h u p s</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,112 +31,6 @@
                 href="https://github.com/barneyhopping">barneyhopping</a></p>
         <a href="https://github.com/chuadongen/Pushup">da sauce</a>
     </footer>
-
-    <script>
-        var speechArray = ['wubba lubba dub dub',"Welcome to the king of iron fist tournament","henshin","go pika chu","Getsuga Tensho",'jay is gay',"its over 9000","salad cow"]
-        var imageArray=['https://i.kym-cdn.com/entries/icons/original/000/003/269/smilejpg.jpg','https://i.gadgets360cdn.com/large/dogecoin_image_small_1618557722850.jpg']
-        var imageLinkArray=['https://knowyourmeme.com/memes/smilejpg','https://knowyourmeme.com/memes/doge']
-        let speech = new SpeechSynthesisUtterance();
-                speech.lang = "en-US";
-                speech.volume = 1;
-                speech.rate = 1;
-                speech.pitch = 1;
-        function weeksBetween(d1, d2) {
-            return Math.floor(Math.round((d2 - d1) / (1000 * 60 * 60 * 24)) / 7);
-        }
-        function randomise(){
-            var index = Math.floor(Math.random() * speechArray.length);
-            speech.text = speechArray[index];
-            $('.logo').attr("src",imageArray[index]);
-            $('#imageLink').attr("href",imageLinkArray[index]);
-            if(index==0){
-                speech.text="haha fuck u"
-            }
-        }
-        $(document).ready(function () {
-            var startDate = new Date(2021, 7, 16);
-            var rightnow = new Date();
-            rightnow = rightnow.setHours(0, 0, 0, 0);
-            var lanjiao = 15 + weeksBetween(startDate, rightnow);
-
-            $('#ronaldmcdonald').html("Today's quota: " + lanjiao + " pushups");
-
-            $('#francis').click(function () {               
-                speech.text = "But can you do more";
-                var richard = localStorage.getItem("richard");
-                try {
-                    JSON.parse(richard)
-                } catch {
-                    localStorage.clear();
-                    richard = null;
-                }
-                if (richard == null) {
-                    localStorage.setItem("richard", JSON.stringify([new Date()]));
-                }
-                else {
-                    var richardArray = JSON.parse(richard);
-                    var date = Date(richardArray[Object.keys(richardArray).length - 1])
-                    date = new Date(date);
-                    if (date.setHours(0, 0, 0, 0) == rightnow) {
-                        // var index = Math.floor(Math.random() * speechArray.length);
-                        // speech.text = speechArray[index];
-                        randomise();
-                    }
-                    else {
-                        richardArray.push(new Date());
-                        localStorage.setItem("richard", JSON.stringify(richardArray));
-                    }
-                }
-                window.speechSynthesis.speak(speech);
-            });
-        });
-        const section = document.querySelector("section");
-        const logo = document.querySelector(".logo");
-        const FPS = 60;
-        section.style.height = window.innerHeight + "px";
-        section.style.width = window.innerWidth + "px";
-
-        // Logo moving velocity Variables
-        let xPosition = 10;
-        let yPosition = 10;
-        let xSpeed = 4;
-        let ySpeed = 4;
-        function update() {
-            logo.style.left = xPosition + "px";
-            logo.style.top = yPosition + "px";
-        }
-
-        setInterval(() => {
-            if (xPosition + logo.clientWidth >= window.innerWidth || xPosition <= 0) {
-                xSpeed = -xSpeed;
-                logo.style.fill = randomColor();
-            }
-            if (yPosition + logo.clientHeight >= window.innerHeight || yPosition <= 0) {
-                ySpeed = -ySpeed;
-                logo.style.fill = randomColor();
-            }
-
-            xPosition += xSpeed;
-            yPosition += ySpeed;
-            update();
-        }, 1000 / FPS);
-        function randomColor() {
-            let color = "#";
-            color += Math.random().toString(16).slice(2, 8).toUpperCase();
-
-            return color;
-        }
-        console.log(randomColor());
-
-        window.addEventListener("resize", () => {
-            xPosition = 10;
-            yPosition = 10;
-
-            section.style.height = window.innerHeight + "px";
-            section.style.width = window.innerWidth + "px";
-        });
-
-    </script>
 </body>
 
 </html>
